@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+     <span>Total clicks:0</span>
+     <button id="btn">CLick Me</button>
+
+
+</body>
+<script>
+     let counter = 0;
+     const button = document.getElementById("btn");
+     const span = document.querySelector("span");
+     function handleClick() {//handleClick 은 Click 에 대응하는 function임
+         counter = counter + 1;
+         console.log("I have been clicked"); 
+         span.innerText = `Total clicks:${counter}`;
+     }
+     button.addEventListener("click", handleClick);
+</script>
+</html>

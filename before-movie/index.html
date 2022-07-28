@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script>
+    const root = document.getElementById("root");
+    const span = React.createElement("span", {id: "cute-span"}, "Hello I'm span"); //우리가 쓰고자 하는 HTML 태그와 같은 이름이어야함.
+    ReactDom.render(span, root) //reactdom아 span 을 root 안에 두어줘!! 
+    //render란, react element 를 가지고 html로 만들어 배치한다는 뜻! (사용자에게 보여준다)
+
+    const btn = React.createElement("button", {
+        onclick: () => console.log("clicked")
+    }, "click me")
+    ReactDom.render(btn, root)
+
+    const container = React.createElement("div", null, [span, btn]); //array 안에 span, btn 을 두어서 span 을 먼저, button 을 그 다음으로 render
+    ReactDom.render(div, root)
+</script>
+
+</html>
